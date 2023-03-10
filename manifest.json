@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Tail Note",
+  "version": "1.0.0",
+  "description": "Enhance your LinkedIn comments with an additional note.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Tail Note | Enhance your LinkedIn comments with an additional note.",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/contents/comment.ts"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ],
+  "permissions": ["storage", "unlimitedStorage"],
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  }
+}
